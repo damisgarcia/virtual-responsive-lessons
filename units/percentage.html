@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  </head>
+  <body>
+    <h1>Porcentagem e Viewport</h1>
+    <h4>Porcentagem</h4>
+    <p>A porcentagem é calculada de acordo com o tamanho do elemento em que aquela tag pertence.</p>
+    <div class="linha">
+      <div class="col" style="width:50%;">50%</div>
+      <div class="col b" style="width:50%;">50%</div>
+    </div>
+    <br>
+    <div class="linha">
+      <div class="col" style="width:30%;">30%</div>
+      <div class="col b" style="width:70%;">70%</div>
+    </div>
+    <br>
+    <h4>Viewport</h4>
+    <p>A porcentagem é calculada de acordo com o tamanho do dispositivo.</p>
+    <div style="display:table;">
+      <div class="col" style="width:50vw;">50VW</div>
+      <div class="col b" style="width:20vw;">30VW</div>
+    </div>
+    <br>
+    <div style="display:table;">
+      <div class="col" style="width:70vw;height: 30vh;">70VW e 30VH</div>
+    </div>
+
+    <a href="relative.html">Anterior</a>
+  </body>
+  <style>
+    body{
+      font-size: 18px;
+    }
+    .linha{
+      display: table;
+      width: 100%;
+      margin: 0px;
+    }
+    /* Utilizar sempre pequenas quantidades de pixels para definir o layout*/
+    .col{
+      float: left;
+      background-color: #f4f4f4;
+      /*margin: 0px 8px;*/
+    }
+    .col.b{
+      background-color: #ddd;
+    }
+  </style>
+</html>

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  </head>
+  <body>
+    <h1>Unidades Relativas</h1>
+    <div class="margin-em">
+      O tipo de unidade 'em' o tamanho é relativo ao tamanho da fonte do elemento pertencente.
+      (2em significaria 2 vezes o tamanho da do elemento pertencente.)
+    </div>
+    <div class="margin-rem">
+      O tipo de unidade 'rem' o tamanho é relativo ao tamanho da fonte do elemento <b>body<b>.
+    </div>
+    <a href="index.html">Anterior</a>
+    <a href="percentage.html">Próximo</a>
+  </body>
+  <style>
+    body{
+      font-size: 18px;
+    }
+    /* Utilizar sempre pequenas quantidades de pixels para definir o layout*/
+    .margin-em{
+      font-size: 24px;
+      line-height: 2em;
+      margin: 2em 1em;
+      padding: 1em;
+      background-color: #f4f4f4;
+    }
+
+    .margin-rem{
+      line-height: 2rem;
+      margin: 2rem 1rem;
+      padding: 1rem;
+      background-color: #ccc;
+    }
+  </style>
+</html>

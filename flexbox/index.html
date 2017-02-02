@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Flexbox</h1>
+      <div class='linha'>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+      </div>
+    </div>
+  </body>
+  <style>
+    .container-fluid{
+      padding: 0px 2rem;
+    }
+    .linha{
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -0.5rem;
+      margin-right: -0.5rem;
+    }
+
+    .linha .col{
+      box-sizing: border-box;
+      width: 25%;
+      max-width: 25%;
+      padding: 0.5rem 0.5rem;
+    }
+
+    /*SM*/
+    @media (min-width: 750px) and (max-width: 970px) {
+      .linha .col{
+        width: 50%;
+        max-width: 50%;
+      }
+    }
+
+    /*XS*/
+    @media (max-width: 749px) {
+      .linha .col{
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</html>

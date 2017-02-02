@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  </head>
+  <body>
+    <header>
+      <a href="#" class='site-title'>Meu Site</a>
+      <span class='divider'></span>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Blog</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+      <img src="bars.svg" width="24px" class='bars'>
+    </header>
+    <div class="container-fluid">
+      <h1>Flexbox</h1>
+      <div class='linha'>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+        <div class="col">Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</div>
+      </div>
+    </div>
+  </body>
+  <style>
+    body{
+      padding: 0px;
+      margin: 0px;
+    }
+    /*Cabeçalho*/
+    header{
+      display: flex;
+      flex: 1;
+      height: 50px;
+      line-height: 50px;
+      padding: 0px 2rem;
+      background-color: #f4f4f4;
+    }
+
+    header .site-title{
+      font-size: 24px;
+    }
+
+    header .divider{
+      flex: 1;
+    }
+
+    header .bars{
+      display: none;
+    }
+
+    header .bars:hover{
+      cursor: pointer;
+    }
+
+    nav ul, nav ul li{
+      display: inline;
+    }
+
+    nav ul li{
+      margin-right: 1rem;
+    }
+
+    nav ul li:last-child{
+      margin-right: 0;
+    }
+
+    /*Grid*/
+    .container-fluid{
+      padding: 0px 2rem;
+    }
+    .linha{
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -0.5rem;
+      margin-right: -0.5rem;
+    }
+
+    .linha .col{
+      box-sizing: border-box;
+      width: 25%;
+      max-width: 25%;
+      padding: 0.5rem 0.5rem;
+    }
+
+    /*SM*/
+    @media (min-width: 750px) and (max-width: 970px) {
+      .linha .col{
+        width: 50%;
+        max-width: 50%;
+      }
+    }
+
+    /*XS*/
+    @media (max-width: 749px) {
+      header .bars{
+        display: block;
+      }
+
+      header nav{
+        display: none;
+      }
+      .linha .col{
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</html>

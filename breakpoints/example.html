@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no"></meta>
+  </head>
+  <body>
+    <div class="xs">Dispositivos muito pequeno</div>
+    <div class="sm">Dispositivos pequeno</div>
+    <div class="lg">Dispositivos grandes</div>
+  </body>
+  <style>
+    body{
+      font-size: 18px;
+      padding: 0;
+      margin: 0;
+      background: #fff;
+    }
+    .xs{
+      background-color: red;
+    }
+    .sm{
+      background-color: green;
+    }
+    .lg{
+      background-color: blue;
+    }
+    .xs, .sm, .lg{
+      display: none;
+      color: white;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+      text-transform: uppercase;
+      font-family: cursive;
+    }
+    /*LG*/
+    @media(min-width: 970px){
+      .lg{
+        display: flex;
+      }
+    }
+
+    /*SM*/
+    @media (min-width: 750px) and (max-width: 970px) {
+      .sm{
+        display: flex;
+      }
+    }
+
+    /*XS*/
+    @media (max-width: 749px) {
+      .xs{
+        display: flex;
+      }
+    }
+  </style>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>clappr</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js"></script>
+      <script src="http://cdn.clappr.io/latest/clappr.min.js"></script>
+  </head>
+  <body>
+    <h1>Clappr</h1>
+    <div id="player"></div>
+    <button data-player-prev="" data-player="player">Anterior</button>
+    <button data-player-next="" data-player="player">Próximo</button>
+    <script>
+        var position = 0
+
+        var playlist = [
+            'http://clappr.io/highline.mp4',
+            'http://vjs.zencdn.net/v/oceans.mp4',
+            'http://d11.cdnvideo.ru/videojs/files/hypnofrog.mp4',
+            'http://d11.cdnvideo.ru/videojs/files/m1080.mp4'
+        ];
+
+        var player = new Clappr.Player({
+            source: playlist[position],
+            parentId: "#player",
+            autoPlay: true,
+            hideMediaControl: false,
+        });
+
+        $("[data-player-next]").on('click', function(e){
+          position < (playlist.length - 1) ? position++  : false
+          player.load(playlist[position])
+        })
+
+        $("[data-player-prev]").on('click', function(e){
+          position > 0 ? position-- : false
+          player.load(playlist[position])
+        })
+
+        // fired when player ends the video
+        player.on(Clappr.Events.PLAYER_ENDED, function () {
+          if (position < playlist.length) {
+            player.load(playlist[position++]);
+          }
+        });
+    </script>
+  </body>
+</html>

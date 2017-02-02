@@ -1,0 +1,71 @@
+/*Base*/
+body{
+  padding: 0px;
+  margin: 0px;
+  font-size: 12pt;
+  font-family: 'Roboto', sans-serif;
+}
+
+.content{
+  overflow: auto;
+  padding-top: 50px;
+}
+
+/*Cabeçalho*/
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 50px;
+  max-height: 50px;
+  line-height: 50px;
+  background-color: #f4f4f4;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+header nav ul, header nav ul li{
+  display: inline;
+  padding: 0;
+}
+
+/*Caso não seja o último elemento da lista*/
+header nav ul li:not(:last-child){
+  margin-right: 1rem;
+}
+
+/*Rodapé*/
+footer{
+  border-top: 1px solid #ccc;
+}
+
+/*Date*/
+time{
+  opacity: 0.3;
+  font-size: 0.8em;
+}
+
+/*Articles*/
+article{
+  border-bottom: 1px solid #f4f4f4;
+}
+
+/*Card*/
+.card{
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+
+/*Responsive*/
+
+/*XS*/
+@media (max-width: 749px) {
+  header .bars{
+    display: block;
+  }
+
+  header nav{
+    display: none;
+  }
+}
