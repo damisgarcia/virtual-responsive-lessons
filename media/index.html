@@ -2,15 +2,21 @@
 <html>
   <head>
       <meta charset="utf-8">
-      <title>clappr</title>
+      <title>Medias</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js"></script>
       <script src="http://cdn.clappr.io/latest/clappr.min.js"></script>
+      <script src="jwplayer-7.9.0/jwplayer.js"></script>
+      <script type="text/javascript">jwplayer.key="AwwvrK8d0yKUlBWTnMmvBbinPRInzhR/1DyAvQ==";</script>
   </head>
   <body>
     <h1>Clappr</h1>
-    <div id="player"></div>
+    <div id="clappr">Carregando...</div>
     <button data-player-prev="" data-player="player">Anterior</button>
     <button data-player-next="" data-player="player">Próximo</button>
+
+    <h1>JWPlayer</h1>
+    <div id="jwplayer">Carregando...</div>
+
     <script>
         var position = 0
 
@@ -23,7 +29,7 @@
 
         var player = new Clappr.Player({
             source: playlist[position],
-            parentId: "#player",
+            parentId: "#clappr",
             autoPlay: true,
             hideMediaControl: false,
         });
@@ -44,6 +50,14 @@
             player.load(playlist[position++]);
           }
         });
+
+        var jwplayer_playlist = playlist.map(function(media){ return { file: media} })
+
+        jwplayer("jwplayer").setup({
+          autostart: true,
+          playlist:jwplayer_playlist
+        })
+
     </script>
   </body>
 </html>
