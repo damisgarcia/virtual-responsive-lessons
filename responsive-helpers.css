@@ -1,0 +1,47 @@
+/**
+*
+* @author: Damis Garcia
+* @doc: <768 => xs, >= 768px => sm, lg >= 992px
+* @reference: Bootstrap 3
+*
+**/
+
+.container-responsive{
+  min-height: 0.01%;
+  overflow-x: auto;
+}
+
+@media (max-width: 767px){
+  .container-responsive{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom:15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+/*Visibilty Helper*/
+.visible-xs,
+.visible-sm,
+.visible-lg{
+  display: none !important;
+}
+
+@media (max-width: 767px){
+  .visible-xs{
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .visible-sm{
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px){
+  .visible-lg{
+    display: block !important;
+  }
+}

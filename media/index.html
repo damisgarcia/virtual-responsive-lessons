@@ -5,7 +5,9 @@
       <title>Medias</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
       <script src="http://cdn.clappr.io/latest/clappr.min.js"></script>
-      <script src="http://jwpsrv.com/library/4+R8PsscEeO69iIACooLPQ.js"></script>
+      <script src="jwplayer-6.1.12/jwplayer.js"></script>
+      <script src="../playlist.js"></script>
+      <!-- <script src="http://jwpsrv.com/library/4+R8PsscEeO69iIACooLPQ.js"></script> -->
       <!-- <script src="jwplayer-6.6.0/jwplayer.js"></script> -->
       <!-- <script type="text/javascript">jwplayer.key="AwwvrK8d0yKUlBWTnMmvBbinPRInzhR/1DyAvQ==";</script> -->
   </head>
@@ -17,10 +19,10 @@
 
     <h1>JWPlayer</h1>
     <h3>Vídeo Playlist</h3>
-    <div id="jwplayer1">Carregando...</div>
+    <div id="jwplayer1" class='jwp-playlist' data-playlist="http://clappr.io/highline.mp4, http://vjs.zencdn.net/v/oceans.mp4, http://d11.cdnvideo.ru/videojs/files/hypnofrog.mp4, http://d11.cdnvideo.ru/videojs/files/m1080.mp4" data-playlist-type='video'>Carregando...</div>
     <h3>Audio Playlist</h3>
-    <div id="jwplayer2">Carregando...</div>
-
+    <div id="jwplayer2" class='jwp-playlist' data-playlist="tracks/Black_Ant_-_01_-_Fater_Lee.mp3,tracks/Broke_For_Free_-_01_-_Night_Owl.mp3,tracks/Ryan_Cullinane_-_Beach_Vibes_With_Drums.mp3" data-playlist-type='audio'>Carregando...</div>
+    
     <style>
       .jwlogo{
         visibility: hidden !important;
@@ -36,9 +38,7 @@
         ];
 
         var musics = [
-          'tracks/Black_Ant_-_01_-_Fater_Lee.mp3',
-          'tracks/Broke_For_Free_-_01_-_Night_Owl.mp3',
-          'tracks/Ryan_Cullinane_-_Beach_Vibes_With_Drums.mp3'
+
         ]
 
         // Clappr
@@ -68,19 +68,21 @@
           }
         });
 
-        // JWPLAYER
-        var jwplayer_videos = videos.map(function(media){ return { file: media } })
-        jwplayer("jwplayer1").setup({
-          autostart: false,
-          playlist:jwplayer_videos
-        })
-
-        var jwplayer_musics = musics.map(function(media){ return { file: media } })
-        jwplayer("jwplayer2").setup({
-          autostart: false,
-          height:40,
-          playlist:jwplayer_musics
-        })
+        // // JWPLAYER
+        // var jwplayer_videos = videos.map(function(media){ return { file: media } })
+        // jwplayer("jwplayer1").setup({
+        //   autostart: false,
+        //   width: 640,
+        //   height: 360,
+        //   playlist:jwplayer_videos
+        // })
+        //
+        // var jwplayer_musics = musics.map(function(media){ return { file: media } })
+        // jwplayer("jwplayer2").setup({
+        //   autostart: false,
+        //   height:40,
+        //   playlist:jwplayer_musics
+        // })
     </script>
   </body>
 </html>
