@@ -3,61 +3,84 @@
   <head>
       <meta charset="utf-8">
       <title>Medias</title>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
       <script src="http://cdn.clappr.io/latest/clappr.min.js"></script>
-      <script src="jwplayer-7.9.0/jwplayer.js"></script>
-      <script type="text/javascript">jwplayer.key="AwwvrK8d0yKUlBWTnMmvBbinPRInzhR/1DyAvQ==";</script>
+      <script src="http://jwpsrv.com/library/4+R8PsscEeO69iIACooLPQ.js"></script>
+      <!-- <script src="jwplayer-6.6.0/jwplayer.js"></script> -->
+      <!-- <script type="text/javascript">jwplayer.key="AwwvrK8d0yKUlBWTnMmvBbinPRInzhR/1DyAvQ==";</script> -->
   </head>
   <body>
     <h1>Clappr</h1>
-    <div id="clappr">Carregando...</div>
+    <div id="clappr"></div>
     <button data-player-prev="" data-player="player">Anterior</button>
     <button data-player-next="" data-player="player">Próximo</button>
 
     <h1>JWPlayer</h1>
-    <div id="jwplayer">Carregando...</div>
+    <h3>Vídeo Playlist</h3>
+    <div id="jwplayer1">Carregando...</div>
+    <h3>Audio Playlist</h3>
+    <div id="jwplayer2">Carregando...</div>
+
+    <style>
+      .jwlogo{
+        visibility: hidden !important;
+      }
+    </style>
 
     <script>
-        var position = 0
-
-        var playlist = [
+        var videos = [
             'http://clappr.io/highline.mp4',
             'http://vjs.zencdn.net/v/oceans.mp4',
             'http://d11.cdnvideo.ru/videojs/files/hypnofrog.mp4',
             'http://d11.cdnvideo.ru/videojs/files/m1080.mp4'
         ];
 
+        var musics = [
+          'tracks/Black_Ant_-_01_-_Fater_Lee.mp3',
+          'tracks/Broke_For_Free_-_01_-_Night_Owl.mp3',
+          'tracks/Ryan_Cullinane_-_Beach_Vibes_With_Drums.mp3'
+        ]
+
+        // Clappr
+        var clapper_position = 0
+
         var player = new Clappr.Player({
-            source: playlist[position],
+            source: videos[clapper_position],
             parentId: "#clappr",
-            autoPlay: true,
+            autoPlay: false,
             hideMediaControl: false,
         });
 
         $("[data-player-next]").on('click', function(e){
-          position < (playlist.length - 1) ? position++  : false
-          player.load(playlist[position])
+          clapper_position < (videos.length - 1) ? clapper_position++  : false
+          player.load(videos[clapper_position])
         })
 
         $("[data-player-prev]").on('click', function(e){
-          position > 0 ? position-- : false
-          player.load(playlist[position])
+          clapper_position > 0 ? clapper_position-- : false
+          player.load(videos[clapper_position])
         })
 
         // fired when player ends the video
         player.on(Clappr.Events.PLAYER_ENDED, function () {
-          if (position < playlist.length) {
-            player.load(playlist[position++]);
+          if (clapper_position < videos.length) {
+            player.load(videos[clapper_position++]);
           }
         });
 
-        var jwplayer_playlist = playlist.map(function(media){ return { file: media} })
-
-        jwplayer("jwplayer").setup({
-          autostart: true,
-          playlist:jwplayer_playlist
+        // JWPLAYER
+        var jwplayer_videos = videos.map(function(media){ return { file: media } })
+        jwplayer("jwplayer1").setup({
+          autostart: false,
+          playlist:jwplayer_videos
         })
 
+        var jwplayer_musics = musics.map(function(media){ return { file: media } })
+        jwplayer("jwplayer2").setup({
+          autostart: false,
+          height:40,
+          playlist:jwplayer_musics
+        })
     </script>
   </body>
 </html>
